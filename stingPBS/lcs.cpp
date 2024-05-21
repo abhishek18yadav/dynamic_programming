@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<vector<int>>dp;
+int dp[1005][1005];
     int f(string text1, string text2, int i, int j){
         if(i == -1 || j == -1) {
                 // if any one opf the string has been exhausted return 0
@@ -17,11 +17,15 @@ vector<vector<int>>dp;
             }
     }
     int longestCommonSubsequence(string text1, string text2) {
-        dp.clear();
-        dp.resize(1005,vector<int>(1005,-1));
+        for(int i=0; i<1005; i++){
+            for(int j=0; j<1005; j++){
+                dp[i][j]=-1;
+            }
+        }
         return f(text1,text2,text1.size()-1,text2.size()-1);
     }
 int main(){
     // https://leetcode.com/problems/longest-common-subsequence/
+    cout<<longestCommonSubsequence("abcde","ace");
     return 0;
 }

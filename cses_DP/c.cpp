@@ -15,7 +15,7 @@ void f(vector<int>&arr,int tar,vector<int>&v){
 }
 
 int main(){
-    vector<int>arr{2,3,5};
+    vector<int>arr{3,34,4,12,5,2};
     int tar=9;
     vector<int>v(10,0);
     f(arr,tar,v);
